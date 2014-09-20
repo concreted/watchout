@@ -15,5 +15,5 @@ Feel free to use it if you like. */
 */
 
 body {
-  background-image: url('./public/background.jpg');
+  background-image: url('background.jpg');
 }

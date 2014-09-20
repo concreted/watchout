@@ -31,7 +31,7 @@ for (var i = 0; i < numEnemies; i++) {
     .attr('width', 30)
     .attr('x', 100)
     .attr('y', 100)
-    .attr('xlink:href', './public/shuriken.png');
+    .attr('xlink:href', 'shuriken.png');
 }
 
 // Add player
@@ -41,7 +41,7 @@ d3.select('svg').append('image')
   .attr('width', 40)
   .attr('x', width/2)
   .attr('y', height/2)
-  .attr('xlink:href', './public/player.png');
+  .attr('xlink:href', 'player.png');
 
 
 var drag = d3.behavior.drag()
@@ -124,11 +124,11 @@ var checkCollisions = function() {
 }
 
 var hitAnimation = function() {
-  svg.select('.player').attr('xlink:href', './public/player-hit.png');
+  svg.select('.player').attr('xlink:href', 'player-hit.png');
   //svg.select('.player').attr('height', 80);
   //svg.select('.player').attr('width', 80);
   setTimeout( function() {
-  svg.select('.player').attr('xlink:href', './public/player.png')
+  svg.select('.player').attr('xlink:href', 'player.png')
   }, 1000);
 }
 
