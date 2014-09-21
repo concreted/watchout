@@ -20,9 +20,7 @@ io.on('connection', onConnect);
 
 function onConnect(socket) {
   console.log('user connected');
-  socket.on('disconnect', function(){
-    console.log('user disconnected');
-  });
+  socket.on('disconnect', leaveGame);
   console.log(players)
   socket.emit('sync players',players)
   socket.on('player joined', joinGame)
@@ -53,7 +51,7 @@ setInterval(function() {
   shurikens = generateLocations();
   sendUpdates();
 
-}, 100);
+}, 1000);
 
 function joinGame(data) {
 

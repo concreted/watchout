@@ -35,13 +35,11 @@ function leaveGame() {
 }
 
 function syncOnlinePlayers(data) {
-  console.log('sync')
   onlinePlayers = data;
 }
 
 socket.on('sync players', syncOnlinePlayers);
 socket.on('sync shurikens', syncShurikens);
-
 
 var svg = d3.select("body").append("svg")
     .attr("width", width)
@@ -63,9 +61,7 @@ for (var i = 0; i < numShurikens; i ++) {
 }
 
 // Add player
-console.log(onlinePlayers)
 onlinePlayers.forEach(function(player){
-  console.log('adding player')
 d3.select('svg').append('image')
   .attr('class', 'player')
   .attr('height', 40)
